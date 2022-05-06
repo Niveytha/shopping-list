@@ -1,0 +1,14 @@
+{
+  "name": "shopping-list",
+  "version": "1.0.0",
+  "description": "Shopping list desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Niveytha Waran",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^18.2.0"
+  }
+}
