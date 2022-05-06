@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Shopping List Item</title>
+    </head>
+
+    <body>
+        <form>
+            <div>
+                <label>Enter Item</label>
+                <input type="text" id="item" autofocus>
+            </div>
+
+            <button type="submit">Add Item</button>
+        </form>
+
+        <script>
+            const electron = require('electron');
+            const {ipcRenderer} = electron; // transfer payload
+
+            const form = document.querySelector('form');
+            form.addEventListener('submit', submitForm);
+
+            function submitForm(e) {    // e: event object/parameter
+                e.preventDefault(); // prevent automatic submission of form to a file
+                // console.log(123); // testing
+                const item = document.querySelector('#item').value;
+                ipcRenderer.send('item:add', item);
+            }
+        </script>
+    </body>
+</html>
