@@ -79,6 +79,12 @@ ipcMain.on('item:add', function(e, item) {
     // setTimeout(function() {
     //     mainWindow.webContents.send('item:add', item)
     // }, 1000)
+
+    // mainWindow.webContents.on('dom-ready', () => {
+    //     mainWindow.webContents.send('item:add', item);
+    // })
+    
+    mainWindow.webContents.send('item:add', item);
     addWindow.close();
 });
 
